@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :occupation do
-    person { nil }
-    role { nil }
+    person
+    role
     begins { "2021-05-23" }
     ends { "2021-05-23" }
   end
@@ -17,12 +17,12 @@ FactoryBot.define do
   factory :role do
     name { "MyString" }
     summary { "MyText" }
-    agency { nil }
+    agency
   end
 
   factory :agency do
     name { "MyString" }
-    label { nil }
+    label
     online_address { "MyString" }
     phone_number { "MyString" }
     hours { "" }
