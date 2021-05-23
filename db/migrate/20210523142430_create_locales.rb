@@ -3,6 +3,7 @@ class CreateLocales < ActiveRecord::Migration[6.1]
     create_table :locales do |t|
       t.string :name
       t.integer :inside
+      t.string :kind
       t.jsonb :boundary
       t.date :incorporated_on
 

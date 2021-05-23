@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_142430) do
   create_table "locales", force: :cascade do |t|
     t.string "name"
     t.integer "inside"
+    t.string "kind"
     t.jsonb "boundary"
     t.date "incorporated_on"
     t.datetime "created_at", precision: 6, null: false
