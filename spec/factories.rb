@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :label do
+    name { "MyString" }
+    summary { "MyText" }
+  end
+
   factory :locale do
     name { "MyString" }
     inside { 1 }
