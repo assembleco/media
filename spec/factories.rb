@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :person do
+    name { "MyString" }
+    email_address { "MyString" }
+    phone_number { "MyString" }
+    online_address { "MyString" }
+    biography { "MyText" }
+  end
+
   factory :role do
     name { "MyString" }
     summary { "MyText" }
