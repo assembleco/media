@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :agency do
+    name { "MyString" }
+    label { nil }
+    online_address { "MyString" }
+    phone_number { "MyString" }
+    hours { "" }
+  end
+
   factory :label do
     name { "MyString" }
     summary { "MyText" }

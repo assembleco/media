@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_23_144947) do
+ActiveRecord::Schema.define(version: 2021_05_23_145422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "agencies", force: :cascade do |t|
+    t.string "name"
+    t.text "summary"
+    t.bigint "label_id", null: false
+    t.bigint "locale_id", null: false
+    t.string "online_address"
+    t.string "phone_number"
+    t.jsonb "hours"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["label_id"], name: "index_agencies_on_label_id"
+    t.index ["locale_id"], name: "index_agencies_on_locale_id"
+  end
 
   create_table "labels", force: :cascade do |t|
     t.string "name"
@@ -32,4 +46,6 @@ ActiveRecord::Schema.define(version: 2021_05_23_144947) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "agencies", "labels"
+  add_foreign_key "agencies", "locales"
 end
