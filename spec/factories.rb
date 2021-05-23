@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :role do
+    name { "MyString" }
+    summary { "MyText" }
+    agency { nil }
+  end
+
   factory :agency do
     name { "MyString" }
     label { nil }
