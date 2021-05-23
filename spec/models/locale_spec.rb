@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Locale, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  xit "can be placed inside a second locale" do
+    usa = create(:locale, name: "United States of America")
+    texas = create(:locale, name: "Texas", inside: usa)
+
+    expect(texas.inside).to be usa
+  end
 end
